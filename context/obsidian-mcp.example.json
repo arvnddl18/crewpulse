@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "obsidian": {
+      "command": "npx",
+      "args": ["-y", "@cyanheads/obsidian-mcp-server@latest"],
+      "env": {
+        "OBSIDIAN_API_KEY": "PASTE_LOCAL_REST_API_KEY_HERE",
+        "OBSIDIAN_BASE_URL": "http://127.0.0.1:27123",
+        "OBSIDIAN_VERIFY_SSL": "false"
+      }
+    }
+  }
+}

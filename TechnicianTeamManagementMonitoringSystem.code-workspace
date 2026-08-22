@@ -1,0 +1,19 @@
+{
+  "folders": [
+    {
+      "name": "CrewPulse",
+      "path": "."
+    },
+    {
+      "name": "Obsidian Vault",
+      "path": "C:/Users/arvnd/OneDrive/Documents/Obsidian Vault"
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "**/.obsidian/workspace.json": true,
+      "**/.obsidian/workspace-mobile.json": true,
+      "**/.obsidian/cache": true
+    }
+  }
+}

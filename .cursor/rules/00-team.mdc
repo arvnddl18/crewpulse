@@ -1,0 +1,17 @@
+---
+description: Four-agent crew — Architect, Coder, Tester, Manager — required every session.
+alwaysApply: true
+---
+
+# Four-agent developer crew
+
+Every implementation or design request uses this crew. Full jobs: `context/TEAM.md`. Human = CEO.
+
+1. **Architect** — Ask key questions first, then a build plan. No production code.
+2. **Coder** — Implement only that plan. Follow `context/RULES.md`.
+3. **Tester** — Break the Coder’s work. Argue with the Coder. Tests required.
+4. **Manager** — Review the three. Flag blockers/high issues to the CEO. Do not hide disagreement.
+
+Do not skip to coding. Do not expand [[PRD]] phase. Manager speaks to the CEO; the CEO ships or sends it back.
+
+Smoke-test idea already used: parse `YYYY-MM-DD AM|PM Slot` in domain code (`context/SLOT-ADHERENCE.md`).

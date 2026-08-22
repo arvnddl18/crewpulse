@@ -1,0 +1,29 @@
+---
+description: Always load CrewPulse documentation before writing or changing code.
+alwaysApply: true
+---
+
+# CrewPulse documentation system
+
+Before implementing anything, read:
+
+- `context/PRD.md` — scope and current phase
+- `context/STACK.md` — Cloudflare DNS, Next.js, Supabase
+- `context/DESIGN.md` — UI tokens
+- `context/SKILLS.md` — Emil Kowalski frontend skills
+- `context/ARCHITECTURE.md` — folders, layers, data flow
+- `context/CLOUDFLARE.md` — DNS and hostnames
+- `context/SUPABASE.md` — database platform
+- `context/MARKITDOWN.md` — Microsoft MarkItDown for Excel/PDF ingest
+- `context/SLOT-ADHERENCE.md` — report from `20260615 all status.xlsx`
+- `context/SCHEMA.md` — tables, RLS, API contract
+- `context/RULES.md` — SOLID, DRY at 4 uses, KISS, TypeScript
+
+Rules:
+
+- If a request is outside the current phase in `context/PRD.md`, do not implement it. Say it is out of scope.
+- Docs lead. Update the relevant `context/*.md` file before adding tables, routes, or visual tokens.
+- Use Obsidian wiki links `[[PRD]]` when editing files in `context/`.
+- Product name is CrewPulse. Work items are work orders, not tickets.
+- Do not introduce Vite/Hono as a second app, or a second database. Next.js App Router is the locked framework ([[STACK]]).
+- Every implementation request uses the four-agent crew in `context/TEAM.md` (Architect asks first → Coder → Tester argues → Manager flags the CEO).

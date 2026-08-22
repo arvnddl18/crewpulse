@@ -1,0 +1,34 @@
+---
+description: Use Headroom MCP to compress large tool output in every Agent chat.
+alwaysApply: true
+---
+
+# Headroom — use it in every chat
+
+Headroom is installed for this Cursor. Setup and limits: `context/HEADROOM.md`.
+
+When the **headroom** MCP server is available, use it. Do not wait for the user to ask.
+
+## Compress
+
+Call `headroom_compress` before reasoning over large tool results, especially:
+
+- Grep / search dumps, test logs, JSON, Excel/markdown ingest
+- File reads that are more than a few hundred lines
+- Repeated bulky output in the same thread
+
+Keep the compressed text plus the returned `hash`. Do not paste the full original back into the reply.
+
+## Retrieve
+
+If you see a Headroom retrieve marker (`hash=…`) or you need detail that was compressed, call `headroom_retrieve` with that hash. Pass `query` when you only need matching slices.
+
+## Stats
+
+Call `headroom_stats` when the user asks about token savings or whether Headroom is working.
+
+## Do not
+
+- Skip compression on huge tool output “to be safe”
+- Treat Headroom as a CrewPulse product feature (it is Cursor tooling; stay inside `context/PRD.md` for app scope)
+- Point Cursor-hosted models at the local proxy unless the user is on BYOK and the proxy is running

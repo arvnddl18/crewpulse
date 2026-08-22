@@ -1,0 +1,20 @@
+---
+description: CrewPulse implementation rules — SOLID, DRY×4, KISS, TS, security.
+globs: **/*.{ts,tsx}
+alwaysApply: false
+---
+
+# Coding rules
+
+Follow `context/RULES.md`, `context/STACK.md`, and `context/ARCHITECTURE.md`.
+
+- App: Next.js App Router + TypeScript in `apps/web`
+- Domain (`packages/domain`) has no React/Next.js/Supabase imports
+- Route Handlers return `{ ok, data } | { ok, code, message }`
+- Validate with Zod at every boundary
+- No `any`. Exhaustive switches on work-order status
+- Extract duplicated logic at 4 uses; keep new functions obvious (KISS)
+- Status transitions only via `canTransition` + RPC
+- RLS stays on; never use the secret key in `NEXT_PUBLIC_*`
+- Filters live in the URL. No Redux. No global work-order store
+- DNS is Cloudflare. Database is Supabase. Framework is Next.js.

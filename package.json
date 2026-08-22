@@ -1,0 +1,17 @@
+{
+  "name": "crewpulse",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w web",
+    "test": "npm run test -w @crewpulse/domain && npm run test -w web",
+    "test:e2e": "npm run test:e2e -w web",
+    "seed:demo": "npx tsx scripts/seed-demo.ts"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.5"
+  }
+}

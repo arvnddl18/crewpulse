@@ -1,0 +1,47 @@
+---
+description: Auto-save new features and details to Obsidian context docs
+globs: context/*.md
+alwaysApply: true
+---
+
+# Feature log — save everything to Obsidian
+
+Every new feature, table, route, or design decision **must be written to `context/` before any code is written**. These files are the Obsidian vault and the source of truth for every future chat session.
+
+## When to update which file
+
+| Change | File to update |
+| --- | --- |
+| New feature, phase, or user story | `context/PRD.md` |
+| New table, column, or RLS policy | `context/SCHEMA.md` |
+| New API route | `context/SCHEMA.md` §4 |
+| New UI page or visual token | `context/DESIGN.md` |
+| New tech choice or library | `context/STACK.md` |
+| New folder, layer, or data-flow change | `context/ARCHITECTURE.md` |
+| New skill or checklist template | `context/SCHEMA.md` + seed |
+| Slot adherence / report change | `context/SLOT-ADHERENCE.md` |
+| New feature that needs its own spec | `context/<FEATURE>.md` + add to `context/Index.md` |
+
+## Rules
+
+1. **Docs first, code second.** If a table, route, or feature is not in `context/`, do not implement it.
+2. **Every new `context/*.md` file** must be:
+   - Added to the `## Source-of-truth files` table in `context/Index.md`.
+   - Linked with an Obsidian wiki link `[[FEATURE]]` from `context/PRD.md` where relevant.
+   - Tagged in its YAML front-matter with `crewpulse` and the feature tag.
+3. **After any session that adds a feature**, verify `context/Index.md` is current. If a new file was created, add it.
+4. **Seed data** must reflect the documented feature — update `scripts/seed-demo.ts` to include representative rows for every new table.
+5. **Migration files** (`supabase/migrations/`) must be created for every schema change, named `YYYYMMDDHHMMSS_<desc>.sql`.
+
+## New feature checklist
+
+Before closing a chat session that added a feature, check:
+
+- [ ] `context/PRD.md` phase table updated (MoSCoW row added)
+- [ ] `context/SCHEMA.md` tables/columns/routes updated
+- [ ] New `context/<FEATURE>.md` created if the feature has its own spec
+- [ ] `context/Index.md` updated with new file
+- [ ] Migration file created
+- [ ] Seed updated with demo rows
+
+This rule fires on every `context/*.md` edit. It is a reminder, not optional.

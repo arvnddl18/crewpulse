@@ -1,0 +1,28 @@
+node_modules/
+.next/
+out/
+dist/
+coverage/
+*.log
+.DS_Store
+Thumbs.db
+
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Local Supabase
+supabase/.temp/
+supabase/.branches/
+
+# Playwright
+apps/web/test-results/
+apps/web/playwright-report/
+apps/web/blob-report/
+apps/web/playwright/.cache/
+
+# Headroom local learnings (machine-specific)
+CLAUDE.local.md
+.headroom/
+

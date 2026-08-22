@@ -1,0 +1,20 @@
+---
+description: CrewPulse visual system — tokens, type, anti-slop UI, Emil skills.
+globs: apps/web/**/*.{tsx,css}
+alwaysApply: false
+---
+
+# Design system
+
+Follow `context/DESIGN.md` and `context/SKILLS.md`.
+
+On frontend work, also use the installed Emil Kowalski skills in `.agents/skills/` (`emil-design-eng`, `animate`, `review-animations`, and the rest of `npx skills add emilkowalski/skills`).
+
+- Fonts: IBM Plex Sans + IBM Plex Mono only
+- Default authenticated chrome: dark ink navy
+- Primary signal: amber `#F5A524`, used sparingly
+- Radius default 6px, never 16px+ cards
+- Status = color dot + text label
+- CSS variables only; no raw hex in components
+- No Inter, Poppins, purple gradients, emoji icons, or bounce animations
+- CrewPulse tokens win over skill defaults when they clash
